@@ -1,0 +1,13 @@
+{
+  "response": [
+    {
+      "datetime": 1586174855,
+      "filename": "lineage-17.1-20200406-UNOFFICIAL-clover.zip",
+      "id": "43b6e9794f8261572db4e0cc12fc83b5",
+      "romtype": "unofficial",
+      "size": 757849641,
+      "url": "https://clover17dot1.tk:8443/clover/lineage-17.1-20200406-UNOFFICIAL-clover.zip",
+      "version": "17.1"
+    }
+  ]
+}
