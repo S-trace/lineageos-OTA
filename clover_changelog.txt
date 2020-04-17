@@ -1,6 +1,289 @@
 ===================================
-Since Mon Apr  6 12:07:35 UTC 2020 (17.1-20200406-UNOFFICIAL-clover)
+Since Tue Apr  7 12:46:25 UTC 2020 (17.1-20200407-UNOFFICIAL-clover)
 ===================================
+
+   * android
+e641fb9 manifest: Move from android-10.0.0_r31 to android-10.0.0_r33
+93fcc05 manifest: Track our own external/gptfdisk
+dbeddab manifest: Track our own external/ppp
+
+   * bootable/recovery
+bead2613 recovery: Implement a volume manager
+b00c91f7 recovery: Hide unmountable volumes from selection
+e4c344ac recovery: Move sideload (non)cancellation to its own key
+9b07b201 recovery: Dejank the menus
+83b95514 recovery: Don't print mount errors when checking for encryption
+4202fecb bootable: Read all asserts in case there are more than one
+59e0459a recovery: Add "Enable ADB" to advanced options
+56a4773a recovery: fixup `split in submenus`
+
+   * build/make
+73279dc8a Merge tag 'android-10.0.0_r33' into lineage-17.1-android-10.0.0_r33
+
+   * device/lineage/sepolicy
+f51b60c sepolicy: recovery: Add policy for volume manager
+2b04642 sepolicy: recovery: Allow reading proc_filesystems
+e89d910 sepolicy: recovery: Fix the volume manager blkid.tab denial
+31b9bc5 sepolicy: recovery: Add policy for /dev/block/volmgr
+4368f9b sepolicy: recovery: Allow volume manager write to /sys/*/uevent
+fb92a02 sepolicy: recovery: allow mounting of usb storage
+b9f79b3 sepolicy: recovery: allow mounting of internal storage
+177e4ad sepolicy: recovery: allow reading fbe key version
+a771885 sepolicy: recovery: fix neverallows
+
+   * device/qcom/sepolicy-legacy-um
+7af39f99 Sepolicy: add define for lksecapp vbmeta and dtbo
+
+   * device/xiaomi/clover
+f5649e0 previous_build: Add 17.1-20200407-UNOFFICIAL-clover
+eae63eb patches: Remove obsolete sdm660-common dependencies patch
+b58a1a9 clover: unify DRM and Keymaster libs
+14df504 clover: Audio: Add hph-lowpower-mode
+5289031 clover: Audio: Add speaker gain combo in mixer path
+
+   * device/xiaomi/sdm660-common
+3b4f713c sdm660: remove unneeded dependencies
+f3a3000a sdm660-common: Update blobs from LA.UM.8.2.r1-06300-sdm660.0
+20bc6290 sdm660-common: unify DRM and Keymaster libs
+a0fab0ed power-libperfmgr: add support for another dt2w node
+2166f2f7 sdm660: Add back missing msm-irqbalance
+34a43c6e sdm660-common: power: Add support for platina tap-to-wake node
+5dc635b4 sdm660-common: Disable AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE
+3892d25c sdm660: biometrics: Do not remove user database
+adba13f7 sdm660-common: lights: red -> white
+86d108d3 sdm660: XiaomiParts: Add PT-BR translation
+1b04323d sdm660-common: biometrics: Restore Fingerprint permissions from Platina
+d874264e sdm660-common: Adapt Light Hal for commonized sdm660 tree
+5a164e54 sdm660-common: light: Set blink as last parameter
+4b367b12 sdm660-common: Improve lights HAL
+54f42d56 sdm660-common: Don't advertise attention light
+44586739 sdm660-common: Support button backlight
+4ea0672c sdm660: sepolicy: Allow vendor init to set few props
+0e9ca1c4 sdm660-common: sepolicy: Label renamed white led node
+6427fd5c sdm660-common: sepolicy: Label IR dev node for jason
+a51e3e01 sdm660-common: sepolicy: Drop unused sysfs_light
+b419075f sdm660-common: sepolicy: Label button backlight nodes
+fe69139f sdm660-common: sepolicy: Address some denials
+0c4da01b sdm660-common: Address SELiunx denials and clean up
+c985be5c sdm660-common: sepolicy: Clean up sepolicy rules
+462e7763 sdm660-common: sepolicy: Label Video prop
+abf186ff sdm660-common: support jason too
+8e2a66d3 sdm660-common: vndk: add vendor packages needed for camera hal
+3ee2457b sdm660-common: Move some ril props to SYSTEM_DEFAULT_PROPERTIES
+ff4a6618 sdm660-common: Add whyred support
+7cf56e44 sdm660-common: sepolicy: Label new TP node
+2a20acd2 sdm660-common: Use complete LA.UM.8.2.r1-05700-sdm660.0 SDM graphic stack
+1fafd0aa sdm660-common: cleanup post-boot script
+96cfcac3 sdm660-common: rootdir: overhaul the post-boost script and target it for sdm660/636
+8d2864d9 sdm660-common: rootdir: migrate tunables from post-boot to init.performance.sdm660
+5e28e6b9 sdm660-common: import blkio tunables from mata
+1660a2c3 sdm660-common: rootdir: remove obsolete HMP tunables
+a23a1064 sdm660-common: rootdir: migrate Power HAL permission setup to init.perf.sdm660
+71e07f5f sdm660-common: rootdir: cleanup init.qcom
+283730f0 sdm660-common: always do printk logging at KERN_WARNING level
+c057269c sdm660-common: light: Set saner ramp values
+aa76cdba sdm660: light: Support Red LED in Lights hal
+112bdf26 sdm660-common: fstab: setup 1GB ZRAM
+93c7d9e7 sdm660-common: perf.sdm660: configure schedutil
+325c10ed sdm660-common: powerhint: add new GPU nodes
+32987e46 sdm660-common: powerhint: disable audio related hints
+e674c2aa sdm660-common: powerhint: add GPU launch hints
+5d4abccd sdm660-common: powerhint: increase launch hints duration
+c94ac48f sdm660-common: power-libperfmgr: Add back powerstats
+001abb24 sdm660-common: sepolicy: Adress few denials
+e1426253 sdm660-common: XiaomiParts: add notification LED brightness slider
+6887daca sdm660-common: XiaomiParts: check if vibrator strength is supported before adding
+54e2fad5 sdm660: Update blobs from  LA.UM.8.2.r1-06200-sdm660.0
+60ea2dbf sdm660-common: Let Home button work when fingerprint is touched for jason
+60d9e99c sdm660-common: sepolicy: Allow vendor init write access to dev/blkio
+a762bfe1 sdm660-common: XiaomiParts: integrate Mi Note 3 configpanel
+eb1979cc sdm660-common: XiaomiParts: use % for notification LED brightness
+e2ed1b2b sdm660-common: light: Fix double led lighting when notification
+0d9cd594 sdm660-common: sepolicy: unbreak sepolicy for carbon
+672ffad9 Revert "sdm660: scripts: Adapt for Carbon Rom"
+
+   * frameworks/av
+3b04f2bcc8 Merge tag 'android-10.0.0_r33' into lineage-17.1-android-10.0.0_r33
+
+   * frameworks/base
+f75b3a3aa7c fixup! SystemUI: Allow to disable Lockscreen Media Art [1/3]
+27bc8293363 SystemUI: Fix showing duplicated charging status
+a36beab2c13 Fix: "Clear All" recent app screen loop bug
+619b6be348d Merge tag 'android-10.0.0_r33' into lineage-17.1-android-10.0.0_r33
+aa8afca1a82 Show QS data saver info dialog until enabled
+5c9d2e88f59 ScreenshotSelector: handle rotation issues
+ffefb88ce94 fixup! SystemUI: Bring back good ol' circle battery style
+54c58a5649b fw/b: Squash of app fw restriction commits
+91e38ca43d5 AudioService: fix audio mode not reset to MODE_NORMAL
+cc7221cd8f4 Merge commit 'refs/changes/87/272587/1' of git://github.com/LineageOS/android_frameworks_base into HEAD Change-Id: I23ddfcc2ee4703ca9070eefbec121351b0237a84
+5ca333100e7 Need to check current user when triggering notification lights
+227c4ee74cb ReadingModeTile: Go away if wellbeing app is enabled
+4b04f74e5df base: SystemUI: add qs AOD tile
+f9fe8c36c51 AODTile: disable tile when power save mode is on
+371d17bae73 AODTile: Explicitely disable long clicks
+556dccaf241 Do not clean up ART profiles during OTAs
+412aa18be5a fw/b: Prevent double interface restriction remove on interface name change
+
+   * frameworks/native
+4fa74a4f1 Add a separate flag in the installer for keeping ART profiles
+
+   * hardware/interfaces
+26d9c2a4a wifi: Fetch softap interface name for creating ap_iface operations.
+800c778d9 wifi: Add provision to create/remove dynamic interface(s).
+d9bd4d199 wifi: Add logic to create secondary interface for STA mode too.
+fffeb14cd Fix build errors.
+
+   * hardware/lineage/livedisplay
+00d6634 livedisplay: sdm: Default initialize objects created with new
+745cac8 livedisplay: sdm: Do not create intermediate string
+
+   * hardware/qcom/media
+53826e06 Merge tag 'android-10.0.0_r33' into lineage-17.1-android-10.0.0_r33
+
+   * kernel/xiaomi/clover
+731dd538f8ea dts: xiaomi: Rename led node to white
+
+   * lineage/crowdin
+f582e66 config: lineage-17.1: Update repositories
+
+   * lineage/hudson
+b7fb447 hudson: The Orca lives again!
+4bc33de Revert "hudson: pull exynos7580 devices"
+4e26917 hudson: Pull tissot
+5fae0c3 hudson: Promote marlin/sailfish to 17.1
+a5d4437 hudson: Promote bardock/bardockpro to 17.1
+339982b hudson: Promote x2 to 17.1
+b4d678d hudson: Drop Mido
+ffbeb6c Regenerate device dependency mappings
+83d7cee hudson: Promote Amber to 17.1
+a8e62f5 hudson: Add exynos 9810 devices
+
+   * lineage/mirror
+8d0c1b7 Updated to 07-Apr-2020 18:58 UTC
+8392f76 Updated to 07-Apr-2020 19:23 UTC
+
+   * lineage/scripts
+8abd00d payload-extractor: Add gitignore for .pyc
+
+   * lineage/website
+143dc47 www: Put the correct information for contacting us
+
+   * lineage/wiki
+a0c0144 wiki: Correct `download_boot` key combo for fajita/guacamole
+ae03171 wiki: devices: Promote shamu to 17.1
+8e9ff0b Revert "wiki: pull exynos7580 devices"
+f451e2f wiki: Fix conditionals for lineage install and upgrade
+dd16618 wiki: pull tissot
+07db14b wiki: Improve legacy A/B hint
+4089781 wiki: Promote marlin/sailfish to 17.1
+0f9ec18 wiki: devices: motorola-sdm660: Assert an Android Pie (9.0) firmware
+7563c38 devices: Promote bardock/bardockpro to 17.1
+0be5085 wiki: Promote x2 to 17.1
+ecffece wiki: Drop Mido
+9d04f0a wiki: Promote Amber to 17.1
+3fab1a3 wiki: We actually support Korean 7880 variants now
+23f048e wiki: Update gems
+4bd6eb8 wiki: Bring back exynos 9810 to life
+
+   * packages/apps/Eleven
+1ac38c4 gradle: update plugin and wrapper
+f93fbfe Refactor music playback service binding logic.
+a63a1fb Use SystemClock.elapsedRealtime() for notification tracking time
+b0e8133 Fix notification foreground tracking behavior
+1f5989f Stop playback button updates when playback fragment is stopped.
+d275ec0 Bind/unbind service on start/stop instead of create/destroy.
+4ba3fd3 Simplify queue change notification handling.
+1e581d8 Refactor AUDIO_BECOMING_NOISY broadcast handling.
+a818589 Avoid usage of deprecated APIs in MusicPlaybackService.
+7a0dd6d Don't update notification twice on play start.
+6f97a25 Fix some lint issues in MusicPlaybackService.
+05c8e90 Start revamping the player UI
+d149292 Hide search and back button for player and queue screens
+24bc08e Add gradient option for album art and use it by default
+c35d071 layouts: right/left -> start/end
+95a7c9e Move to AppCompat theme
+bb1a94d Settings: convert to PreferenceFragmentCompat
+daecf8f AudioPlayer: convert headerbar into toolbar
+8df3d41 menu: clean up playlist helpers
+cbb0b6b Eleven: fix popup menu positioning
+145c292 Eleven: remove search feature
+
+   * packages/apps/Jelly
+26de094 Jelly: Switch to androidx loader
+f345cc5 Jelly: Switch to androidx preference
+038c888 Jelly: Import ContentProvider.requireContext from R
+5a7565b Jelly: Fix some cast warnings
+16aa7d0 Jelly: Bump Sdk version to 29
+570821b Jelly: Don't use LocalBroadcastManager
+57e046a Jelly: Suppress warning on Q deprecation
+000c793 Jelly: Replace ProgressDialog with an AlertDialog
+b708c1b Jelly: Enforce pattern to be matching
+
+   * packages/apps/LineageParts
+1b1932c LiveDisplaySettings: Hide Reading Mode if wellbeing app is enabled
+1c9bd82 LineageParts: Add ACTION_AMBIENT_DISPLAY icon
+
+   * packages/apps/Recorder
+f23bcc6 Revert "Recorder: Add support for playback audio"
+
+   * packages/apps/Settings
+e0d9aa239d Settings: per-app cellular data, vpn and wifi restrictions
+c8e228f43b Merge tag 'android-10.0.0_r33' into lineage-17.1-android-10.0.0_r33
+a4819446dc Merge commit 'refs/changes/97/272597/1' of git://github.com/LineageOS/android_packages_apps_Settings into HEAD Change-Id: Icac667d74a6114725e802b3a2d4d2f954deeea3d
+308b1d2c97 development: Add setting for updating recovery
+029a4d7415 One does not simply become a Developer
+
+   * packages/apps/Snap
+5599c8a37 Snap: quickreader: Don't allow insecure actions
+
+   * packages/apps/Updater
+d1273f2 Only cancel notification if update isn't installed
+
+   * system/bt
+413f66aab Merge tag 'android-10.0.0_r33' into lineage-17.1-android-10.0.0_r33
+
+   * system/core
+8972dc26d adb: Add ro.adb.secure.recovery handling
+
+   * system/netd
+144b93b0 system/netd: Squash of app fw restriction commits
+3eeb383d system/netd: Add BPF support for lineage network restrictions
+
+   * system/sepolicy
+a93e0c3a3 sepolicy: whitelist recovery from node creation neverallow
+cd91d7166 sepolicy: Allow recovery to alter /
+d12551bf1 sepolicy: Relabel wifi. properties as wifi_prop
+462f72c86 Allow adb start/stop mdnsd via ctl.start/stop
+
+   * tools/repohooks
+dc1782f Merge "Added keyword ${PREUPLOAD_FILES_PREFIXED}."
+7bd2a9a utils: run: remove redundant redirect settings
+2bbd47c utils: run: rename internal stdout/stderr vars
+
+   * vendor/lineage
+83dee70c kernel: Allow specifying a custom linker binary
+c0b837db tasks: kernel: Clarify prebuilt kernel deprecation notice
+
+   * vendor/qcom/opensource/power
+f42873e power: Add the custom set_feature lib as whole static library
+
+   * vendor/xiaomi/clover
+b3f078e clover: unify DRM and Keymaster libs
+
+   * vendor/xiaomi/sdm660-common
+6249c8e sdm660-common: Update blobs from LA.UM.8.2.r1-06300-sdm660.0
+b7faa10 sdm660-common: unify DRM and Keymaster libs
+
+   * vendor/xiaomi/wayne
+a34669e wayne: unify DRM and Keymaster libs
+f8a355c wayne: Add missing scve blob
+
+===================================
+Since Mon Apr  6 12:07:35 UTC 2020 and before Tue Apr  7 12:46:25 UTC 2020 (17.1-20200406-UNOFFICIAL-clover to 17.1-20200407-UNOFFICIAL-clover)
+===================================
+
+   * device/lineage/sepolicy
+158f077 sepolicy: New type sdcard_posix for labeled filesystems
 
    * device/xiaomi/clover
 d9152c8 previous_build: Add 17.1-20200406-UNOFFICIAL-clover
@@ -43,11 +326,30 @@ da09d196 sdm660: Remove power hal from manifest
 31e787be Merge tag 'LA.UM.8.2.r1-06300-sdm660.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/gps into HEAD
 3f07fdd0 Merge tag 'LA.UM.8.2.r1-06300-sdm660.0' of https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/data-ipa-cfg-mgr into HEAD
 
+   * external/gptfdisk
+6d837c5 gptfdisk: Build lib for recovery
+e0c471a gptfdisk: Provide sgdisk_read for direct reads of the partition table
+eeb9015 gptfdisk: include gptcl.h after sgdisk.h
+
    * lineage/wiki
 d27f8ad wiki: Fix upgrade steps for lineage recovery
 
-   * vendor/xiaomi/MiuiCamera
-7b69a21 Update Device Feature from apk
+   * system/core
+b4c666471 core: mark libsysutils and libdiskconfig recovery_available
+
+   * system/sepolicy
+a4f1b3252 sepolicy: Add sdcard_posix_contextmount_type attribute
+
+   * system/vold
+cb16b16 vold: add support for more filesystems for public storage
+86918bf vold: Fix fsck on public volumes
+ab73759 vold: Support internal storage partitions
+8b76898 vold: Honor mount options for ext4/f2fs partitions
+c8d267d vold: Mount ext4/f2fs portable storage with sdcard_posix
+09aef34 vold ext4/f2fs: do not use dirsync if we're mounting adopted storage
+bf60c5f Fix the group permissions of the sdcard root.
+9120db1 vold: skip first disk change when converting MBR to GPT
+a941a18 vold: Accept Linux GPT partitions on external SD cards
 
 ===================================
 Since Fri Apr  3 15:29:02 UTC 2020 and before Mon Apr  6 12:07:35 UTC 2020 (17.1-20200403-UNOFFICIAL-clover to 17.1-20200406-UNOFFICIAL-clover)
@@ -73,6 +375,9 @@ b49054a [AWARE] Protect string copy against buffer overflow
    * kernel/xiaomi/clover
 e01ad487c52f Merge branch 'kernel.lnx.4.4.r38-rel' of github.com:android-linux-stable/msm-4.4 into kernel.lnx.4.4.r38-rel-wifi
 
+   * lineage-sdk
+f3b9b0c9 lineage-sdk: Add AoD Tile
+
    * lineage/hudson
 fceb00a hudson: Put LG G3 family in 16.0 temporarily
 ab1d237 Revert "hudson: Put LG G3 family in 16.0 temporarily"
@@ -81,6 +386,9 @@ ab1d237 Revert "hudson: Put LG G3 family in 16.0 temporarily"
    * lineage/wiki
 6d653fb wiki: Add realme 2 Pro (RMX1801)
 b6bd3f4 wiki: devices: zl1: Add myself as a maintainer
+
+   * packages/apps/Jelly
+9a97a3c Jelly: Move to kotlin
 
    * vendor/lineage
 db1caf45 extract_utils: Fix doubled path separator
@@ -277,6 +585,7 @@ fb5db09 payload-extractor: Add .img to output file name
 
    * lineage/website
 79ac27a Changelog 24
+4b6a322 www: Link contact/PR pack in the footer
 
    * lineage/wiki
 611a9c3 wiki: seventeen(dot)one
@@ -402,6 +711,7 @@ bbc7940f netd: Don't fail on FTP or PPTP conntrack failure
    * tools/repohooks
 e5ad9af pre-upload: fix handling of silent tools
 ea6ebde Merge "pre-upload: fix handling of silent tools"
+0e8d3a7 Added keyword ${PREUPLOAD_FILES_PREFIXED}.
 9ccb9ce hooks: bind stdin all the time
 
    * vendor/lineage
@@ -413,6 +723,10 @@ e747bcc sn100x: halimpl: ignore autonomous mode writes if the feature is disable
 
    * vendor/qcom/opensource/fm-commonsys
 cc7dc91 Automatic translation import
+
+   * vendor/qcom/opensource/interfaces
+236f51d display: Remove mapper 4.0 and allocator 4.0
+8086cfc Regenerate blueprints for LA.UM.8.1.r1-14500-sm8150.0
 
    * vendor/xiaomi/sdm660-common
 51a5985 sdm660: Use Pie Version of Thermal Blobs
@@ -493,11 +807,20 @@ ad00196e1 Version bump to QQ2A.200305.003 [core/build_id.mk]
 1dcda6d9e releasetools: support reading release keys out of some sort of command
 8c36bb4e5 releasetools: Add script to sign zips
 3f5b7e514 releasetools: Use the first entry of a mount point when reading fstab
+6f46bdfe9 Version bump to QQ2A.200305.004 [core/build_id.mk]
 cdbd83728 Merge tag 'android-10.0.0_r27' into lineage-17.1-android-10.0.0_r27
+ea529bd13 Update Security String to 2020-04-01 Bug:149240442 (cherry picked from commit f9edfe37149cef8ffe6b8c027f6ab563fdcbbaa6)
+76d1db68a Make change and version bump to QQ2A.200401.001
+b5b9163ea Update Security String to 2020-04-05 Bug:149240442 (cherry picked from commit d451ad7167dc8dc9f44b35a8dd1f9d3faafa345e)
+af859e414 Make change and version bump to QQ2A.200405.001
+7ea314069 Version bump to QQ2A.200405.002 [core/build_id.mk]
 15b689ea2 build: Add vendor.prop and odm.prop capability
 5b432296d releasetools: Use 0oXXX instead of 0XXX for octal
+cdfa6634a Version bump to QQ2A.200405.003 [core/build_id.mk]
 0415a72e6 sign_target_apks: Add networkstack to default key_map
+e39209ff1 Version bump to QQ2A.200405.004 [core/build_id.mk]
 d429a4141 Do not remove RRO resources
+49ceb3a8a Version bump to QQ2A.200405.005 [core/build_id.mk]
 3655b8708 Merge tag 'android-10.0.0_r31' into lineage-17.1-android-10.0.0_r31
 b91f9c168 Introduce build variable `OVERRIDE_TARGET_FLATTEN_APEX`.
 
@@ -562,6 +885,8 @@ ea74ebdeff [automerger skipped] Merge "DO NOT MERGE Skip to check H.265 HEVC dec
 55bccd3445 [automerger skipped] Merge "DO NOT MERGE Skip to check H.265 HEVC decoding support for automotive devices." into marshmallow-cts-dev am: dbaf8eded9 -s ours am skip reason: subject contains skip directive skipped: 65c9331144 skipped: c6e03dc5e1 skipped: dd skipped: a3759334a6 am: 1bf4e8d74e am: ab8746a191 am: 4b0fed38a9 -s ours am: ea74ebdeff -s ours am: 0b90212622
 6575e1b2aa Snap for 6127030 from b40af20437785265fe41ff932f370b81721d6864 to qt-qpr2-release
 aabb952afa Snap for 6128439 from 55bccd3445d0c869c95ae4b4c51313aa43d4f45f to qt-qpr2-release
+22cbc0fee2 Add CTS test for AssetManager double destroy
+6767dc8e5b Merge cherrypicks of [10297641, 10298303, 10298494, 10298514, 10297196, 10298164, 10297642, 10297643, 10296046, 10296047, 10298245, 10298246, 10297197, 10297198, 10298495, 10298496] into qt-qpr2-release
 
    * development
 3c7d2e3a3 Merge "Bumping version number for build-tools 29.0.3 Bug: b/145761615 Test: N/A" into qt-dev
@@ -852,6 +1177,10 @@ b1ac8f5 Snap for 6123600 from 148886ab41fed444b221d84a9b6dd67d29cacd75 to qt-qpr
    * external/p7zip
 6f674e4 p7zip: Enforce large files support
 
+   * external/ppp
+90ceab9 pppd: Fix bounds check in EAP code
+154ea6b pppd: Ignore received EAP messages when not doing EAP
+
    * external/sqlite
 f81fd09 [automerger skipped] resolve merge conflicts of 9c46de648a547bf82dc1edebc589cc09362d3432 to oc-dr1-dev am: 662da964e5 -s ours am skip reason: skipped by user bferris
 0f11c34 [automerger skipped] resolve merge conflicts of 9c46de648a547bf82dc1edebc589cc09362d3432 to oc-dr1-dev am: 662da964e5 -s ours am: f81fd097ba
@@ -887,6 +1216,11 @@ a66592bf96 Merge cherrypicks of [10101230, 10101593, 10101594, 10101595, 1010136
 a275499136 Revert "cameraservice: Resolve message vs start/stop preview races"
 db49c9e1b4 libstagefright: Fix memory leak due to lock timeout
 f75d7818f7 Merge tag 'android-10.0.0_r27' into lineage-17.1-android-10.0.0_r27
+fe8b9a7cb3 [DO NOT MERGE] Fix heap buffer overflow for releaseSecureStops.
+bcd4eaae51 [DO NOT MERGE] Fix heap buffer overflow in clearkey CryptoPlugin::decrypt
+61df392ec2 Merge cherrypicks of [10297641, 10298303, 10298494, 10298514, 10297196, 10298164, 10297642, 10297643, 10296046, 10296047, 10298245, 10298246, 10297197, 10297198, 10298495, 10298496] into qt-qpr2-release
+25134ebcd7 Revert "audiopolicy: align input and output devices for engine"
+674ce23633 Merge cherrypicks of [10301183, 10301340, 10301110, 10299537, 10300908, 10301450, 10300619, 10301451, 10301654, 10301341, 10301342, 10301343, 10301344, 10301508, 10301184, 10301185, 10301309, 10301290, 10301310, 10301345, 10301346, 10301464, 10301291, 10300931, 10301382, 10301383, 10301465, 10301384, 10301385, 10301408, 10301386, 10299538, 10301387, 10301388, 10301389, 10301390, 10301391, 10301292, 10301392, 10301393, 10301694, 10301695, 10301489, 10299807, 10299808, 10299809, 10300620, 10301491, 10301111, 10301348] into qt-qpr2-release
 f9de53e73e Merge tag 'android-10.0.0_r31' into lineage-17.1-android-10.0.0_r31
 6db4751523 cameraserver: Fix logic to skip callbacks for non HAL3 devices for vendor listeners.
 
@@ -981,6 +1315,11 @@ f6c5d7a1baf Merge tag 'android-10.0.0_r27' into lineage-17.1-android-10.0.0_r27
 f7af70f0399 SystemUI: handle camera launch gesture from keyhandler
 c3fb8f1f1b3 Context-aware Bluetooth airplane mode
 e7c1409fb6c Change layout of ToggleAction for GlobalActionsDialog
+40dd65db399 Prevent sending early termination of appop use
+5f6b5390aeb Fix potential double destroy of AssetManager
+21b9dc78d6d Revoke 'always' web handler status when not autoverifying
+3484a2dd5c3 Fix serialization issue of ExternalVibration
+b0405c5c1fd Merge cherrypicks of [10297641, 10298303, 10298494, 10298514, 10297196, 10298164, 10297642, 10297643, 10296046, 10296047, 10298245, 10298246, 10297197, 10297198, 10298495, 10298496] into qt-qpr2-release
 f5a96036377 base: Use ro.build.date to clear cache dirs on update
 3bca55db76d Add upgrade step to fix system sounds issue
 031a7888c92 RingtoneManager: Don't crash if the ringtone doesn't have a numerical ID
@@ -992,7 +1331,12 @@ a89183e55e9 Camera button support
 9458ea30a19 PhoneWindowManager: Fix screen peek KEY_FOCUS handling
 06af003f2d0 Enlarge EPSILON to 0.01 for android.display.cts.DisplayTest#testModeSwitch pass
 7803d02d23f Allow zero stride
+d3490a2530a Allow settingIgnored for DBH request if inEmergency
+b8da4a2c135 Merge cherrypicks of [10460465, 10460521, 10460352, 10458819] into qt-qpr2-release
 85e5a576873 SystemUI: Show charging status in addition to trust granted/transient status
+a08d52535db DO NOT MERGE: Revert: Freeup lock when IME is set inactive and unbound
+e823c54aca4 DO NOT MERGE: Revert Move startInput for WINDOW_FOCUS_GAIN to background thread
+13758c1cf24 Merge cherrypicks of [10484934, 10484473, 10472987, 10481068] into qt-qpr2-release
 2904eee392d SystemUI: Don't sleep on double tap below status bar
 b2a04279b5d Start BiometricService even if no hardware is present
 6a948b8bce8 Pad ime_switcher same as navbar buttons
@@ -1243,10 +1587,20 @@ fccfd910 msm8960/8974: Include string.h where it is necessary
 d18dd5fe Merge tag 'android-10.0.0_r31' into lineage-17.1-android-10.0.0_r31
 
    * hardware/qcom/media
+5c73ed08 vdec: Set correct output buffer size: dynamic meta mode
+cf783bb6 Merge cherrypicks of [10298392, 10300120, 10300112, 10298398, 10300814, 10300738, 10300777, 10300815, 10300816, 10300706, 10300528, 10300817] into qt-qpr2-release
 e484f0ed Merge tag 'android-10.0.0_r31' into lineage-17.1-android-10.0.0_r31
 
    * hardware/qcom/sdm845/display
 f6278091 display: Fix path to vendor/qcom/opensource
+
+   * hardware/qcom/sdm845/media
+c09a90b3 vdec: Set correct output buffer size: dynamic meta mode
+3903fa9c Merge cherrypicks of [10298392, 10300120, 10300112, 10298398, 10300814, 10300738, 10300777, 10300815, 10300816, 10300706, 10300528, 10300817] into qt-qpr2-release
+
+   * hardware/qcom/sm8150/media
+eebeb0d1 vdec: Set correct output buffer size: dynamic meta mode
+ff17695d Merge cherrypicks of [10298392, 10300120, 10300112, 10298398, 10300814, 10300738, 10300777, 10300815, 10300816, 10300706, 10300528, 10300817] into qt-qpr2-release
 
    * kernel/xiaomi/clover
 82cc12c7f749 Merge a4fda0058007867361bd0df664ad9a449660110c on remote branch
@@ -2457,6 +2811,10 @@ c364e9b30e Merge cherrypicks of [10081242, 10082309, 10082793, 10082558, 1008124
 c4ff991734 Automatic translation import
 ca888de926 Use IEC units in app info data usage.
 858c495196 Merge tag 'android-10.0.0_r27' into lineage-17.1-android-10.0.0_r27
+3f7cd6e788 Import translations. DO NOT MERGE
+ec2106d5a3 Update L2U string for face unlock in settings
+dae5254cd8 Import translations. DO NOT MERGE
+328b2e27d2 Merge cherrypicks of [10301183, 10301340, 10301110, 10299537, 10300908, 10301450, 10300619, 10301451, 10301654, 10301341, 10301342, 10301343, 10301344, 10301508, 10301184, 10301185, 10301309, 10301290, 10301310, 10301345, 10301346, 10301464, 10301291, 10300931, 10301382, 10301383, 10301465, 10301384, 10301385, 10301408, 10301386, 10299538, 10301387, 10301388, 10301389, 10301390, 10301391, 10301292, 10301392, 10301393, 10301694, 10301695, 10301489, 10299807, 10299808, 10299809, 10300620, 10301491, 10301111, 10301348] into qt-qpr2-release
 a2043a0d7c Bug:PreferredNetworkModePreferenceController.java not being refreshed
 4c1723073e Settings: Fix QRCamera crash
 786bd5722e Settings: Fix default value for proximity on wake pref
@@ -2464,6 +2822,8 @@ ed22cf2f07 Settings: Add lockscreen visualizer toggle
 4998178386 wifi: Remove Qr Code scanner during Modify Network option.
 c8021675e5 Skip loading contextual cards if legacy cards are used
 a640ef558d Settings: Add high touch sensitivity and touchscreen hovering toggles
+7880c988ea [Telephony Setting] Add supplementary conditions for CDMA display IMEI info when subscriptionInfo is null
+360a04f337 Merge cherrypicks of [10460465, 10460521, 10460352, 10458819] into qt-qpr2-release
 a6705f6314 Merge tag 'android-10.0.0_r31' into lineage-17.1-android-10.0.0_r31
 8a951ede09 Settings: Fix r31 merge
 3b881673da Hide ADB Root preference on user builds
@@ -2675,6 +3035,10 @@ c258f564 Optionally turn screen back on after the ScreenOff CUJ.
    * system/bt
 128340fe6 Merge tag 'android-10.0.0_r23' into staging/lineage-17.1_merge-android-10.0.0_r23
 0cebcc842 Merge tag 'android-10.0.0_r27' into lineage-17.1-android-10.0.0_r27
+10bb6cf79 LE-COC: Free LE-COC server resource when BluetoothServerSocket is closed
+98eeab03c L2CAP Socket: Keep track of last allocated socket ID
+63034887a L2CAP socket: Stop L2CAP server by ID instead of PSM
+2f320d60b Merge cherrypicks of [10301183, 10301340, 10301110, 10299537, 10300908, 10301450, 10300619, 10301451, 10301654, 10301341, 10301342, 10301343, 10301344, 10301508, 10301184, 10301185, 10301309, 10301290, 10301310, 10301345, 10301346, 10301464, 10301291, 10300931, 10301382, 10301383, 10301465, 10301384, 10301385, 10301408, 10301386, 10299538, 10301387, 10301388, 10301389, 10301390, 10301391, 10301292, 10301392, 10301393, 10301694, 10301695, 10301489, 10299807, 10299808, 10299809, 10300620, 10301491, 10301111, 10301348] into qt-qpr2-release
 82776c77f Merge tag 'android-10.0.0_r31' into lineage-17.1-android-10.0.0_r31
 3fa8235c4 Revert "Bluetooth HFP: Use WBS by default (1/5)"
 
@@ -2724,6 +3088,9 @@ aef9606b8 adb: Also check for ALLOW_ADBD_ROOT
 f3c08de [automerger skipped] Prevent information disclosure in rw_i93.c am: 0a61f668bd am: 5ea42a03f7 am: 629f00e8e2 -s ours am: 66883917ce -s ours am skip reason: Change-Id I1d33d80760be986af9905304c17ce05cc0f9ce63 with SHA-1 712dcda250 is in history
 b964543 [automerger skipped] Prevent information disclosure in rw_i93.c am: 0a61f668bd am: 5ea42a03f7 am: 629f00e8e2 -s ours am: 66883917ce -s ours am: f3c08de8ca -s ours am skip reason: Change-Id I1d33d80760be986af9905304c17ce05cc0f9ce63 with SHA-1 712dcda250 is in history
 11476bf Snap for 6123600 from b964543eee101a9e7fa40ab28cce21057d230acc to qt-qpr2-release
+c67bf18 OOB write in rw_t2t_handle_tlv_detect_rsp
+0aec6ae OOB write in rw_t2t_ndef.cc
+060a571 Merge cherrypicks of [10297641, 10298303, 10298494, 10298514, 10297196, 10298164, 10297642, 10297643, 10296046, 10296047, 10298245, 10298246, 10297197, 10297198, 10298495, 10298496] into qt-qpr2-release
 
    * system/sepolicy
 979f5a44b Allow dumpstate to dumpsys gpu
