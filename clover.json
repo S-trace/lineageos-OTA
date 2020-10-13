@@ -1,12 +1,12 @@
 {
   "response": [
     {
-      "datetime": 1592645652,
-      "filename": "lineage-17.1-20200620-UNOFFICIAL-clover",
-      "id": "7ab2abc899ba3698e3eaf507f7b87724",
+      "datetime": 1602418817,
+      "filename": "lineage-17.1-20201011-UNOFFICIAL-clover",
+      "id": "8c63f624a7975d86880bf4f61a948f08",
       "romtype": "unofficial",
-      "size": 767018353,
-      "url": "https://master.dl.sourceforge.net/project/lineage-clover-updates/LineageOS-17.1/lineage-17.1-20200620-UNOFFICIAL-clover.zip",
+      "size": 767814177,
+      "url": "https://master.dl.sourceforge.net/project/lineage-clover-updates/LineageOS-17.1/lineage-17.1-20201011-UNOFFICIAL-clover.zip",
       "version": "17.1"
     }
   ]
